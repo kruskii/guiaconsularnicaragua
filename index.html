@@ -31,17 +31,33 @@ a{color:#0d5bb0;text-decoration:none}
 a:hover{color:#0a4890}
 .np-link{color:#0d5bb0;text-decoration:none;border-bottom:1px solid rgba(13,91,176,.28);transition:border-color .15s}
 .np-link:hover{border-bottom-color:#0d5bb0}
+.np-nav-a{text-decoration:none}
 .np-card{transition:border-color .15s,box-shadow .15s,transform .15s}
 .np-card:hover{border-color:#0d5bb0;box-shadow:0 10px 28px rgba(13,91,176,.14);transform:translateY(-2px)}
 </style>
 </helmet>
 <div style="font-family:'Archivo',system-ui,sans-serif;color:#23211a;background:#faf8f3;min-height:100vh">
 
+<!-- STICKY SLIM BAR (mobile) -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<div style="{{ stickyBarStyle }}">
+  <div style="max-width:1180px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#top" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:17px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap">Gu&iacute;a Consular Nicaragua</a>
+    <div style="display:flex;align-items:center;gap:9px;flex:none">
+      <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
+      <span style="color:#cbc5b6;font-size:13px">/</span>
+      <button onClick="{{ setEs }}" style="{{ esStyle }}">ES</button>
+    </div>
+  </div>
+  <div style="height:1px;background:rgba(0,0,0,.1)"></div>
+</div>
+</sc-if>
+
 <!-- MASTHEAD -->
-<header style="max-width:1180px;margin:0 auto;padding:0 28px">
+<header id="top" style="max-width:1180px;margin:0 auto;padding:0 28px">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:30px 0 22px;flex-wrap:wrap">
     <div>
-      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:{{ wordmarkSize }};letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">GuíaConsularNicaragua</div>
+      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:{{ wordmarkSize }};letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Gu&iacute;a Consular Nicaragua</div>
       <div style="display:flex;flex-direction:column;height:9px;width:100%;margin-top:6px">
         <div style="flex:1;background:#1A56B0"></div>
         <div style="flex:1;background:#FFFFFF"></div>
@@ -89,7 +105,7 @@ a:hover{color:#0a4890}
   <!-- FOOTER -->
   <div style="margin:72px auto 0;padding:0 0 90px">
     <footer style="border-top:1px solid rgba(0,0,0,.12);padding-top:22px">
-      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">GuíaConsularNicaragua</div>
+      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">Gu&iacute;aConsularNicaragua</div>
       <p style="font-size:12.5px;line-height:1.6;color:#9a9384;margin:0">{{ t.footer.text }}</p>
     </footer>
   </div>
@@ -121,6 +137,7 @@ class Component extends DCLogic {
   state = {
     lang: (typeof localStorage !== 'undefined' && localStorage.getItem('np_lang')) || 'en',
     isMobile: false,
+    sticky: false,
     cookieChoice: (typeof localStorage !== 'undefined' && localStorage.getItem('np_cookie_consent')) || null,
     feedbackMenuOpen: false,
   };
@@ -132,17 +149,23 @@ class Component extends DCLogic {
     };
     window.addEventListener('resize', this._onResize);
     this._onResize();
+    this._onScroll = () => {
+      const s = window.scrollY > 220;
+      if (s !== this.state.sticky) this.setState({ sticky: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this._onResize);
+    window.removeEventListener('scroll', this._onScroll);
   }
 
   CONTENT = {
     en: {
-      tagline: 'Community Guide to Nicaraguan Procedures · Worldwide',
+      tagline: 'Guide to Consular Procedures · Worldwide',
       updated: 'Updated July 2026',
       topHero: {
-        headline: 'Nicaragua Passport & Visa Guide',
+        headline: 'Nicaragua Consular Guide: Passport & Visa',
       },
       headline: 'What do you need to do today?',
       subhead: 'A clear, independent, community-updated guide — for Nicaraguans abroad and travelers from around the world.',
@@ -162,16 +185,16 @@ class Component extends DCLogic {
         redditLabel: 'Ask the community on r/Nicaragua',
       },
       footer: {
-        text: 'GuíaConsularNicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and requirements change frequently — always verify with official sources. Last updated July 2026.',
+        text: 'Gu\u00edaConsularNicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and requirements change frequently — always verify with official sources. Last updated July 2026.',
       },
       cookieBanner: { text: 'This site uses cookies to understand how visitors use this guide.', decline: 'Decline', accept: 'Accept' },
       reportLabel: 'Report an issue',
     },
     es: {
-      tagline: 'Gu\u00eda Comunitaria de Tr\u00e1mites Nicarag\u00fcenses · Mundial',
+      tagline: 'Gu\u00eda de Tr\u00e1mites Consulares · Mundial',
       updated: 'Actualizado julio 2026',
       topHero: {
-        headline: 'Gu\u00eda de Pasaporte y Visa de Nicaragua',
+        headline: 'Gu\u00eda Consular de Nicaragua: Pasaporte y Visa',
       },
       headline: '\u00bfQu\u00e9 necesitas hacer hoy?',
       subhead: 'Una gu\u00eda clara, independiente y actualizada por la comunidad — para nicarag\u00fcenses en el exterior y viajeros de todo el mundo.',
@@ -191,7 +214,7 @@ class Component extends DCLogic {
         redditLabel: 'Pregunta a la comunidad de Reddit en r/Nicaragua',
       },
       footer: {
-        text: 'GuíaConsularNicaragua es un recurso comunitario independiente, sin afiliaci\u00f3n ni respaldo del Gobierno de Nicaragua. Los procedimientos, tarifas y requisitos cambian con frecuencia — verifica siempre con fuentes oficiales. \u00daltima actualizaci\u00f3n julio 2026.',
+        text: 'Gu\u00edaConsularNicaragua es un recurso comunitario independiente, sin afiliaci\u00f3n ni respaldo del Gobierno de Nicaragua. Los procedimientos, tarifas y requisitos cambian con frecuencia — verifica siempre con fuentes oficiales. \u00daltima actualizaci\u00f3n julio 2026.',
       },
       cookieBanner: { text: 'Este sitio usa cookies para entender c\u00f3mo los visitantes usan esta gu\u00eda.', decline: 'Rechazar', accept: 'Aceptar' },
       reportLabel: 'Reportar un problema',
@@ -222,9 +245,12 @@ class Component extends DCLogic {
     const fabIconTransform = this.state.feedbackMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
     const passportHref = lang === 'en' ? 'pasaporte/en/' : 'pasaporte/es/';
 
+    const stickyBarStyle = 'position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(250,248,243,.94);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);transition:transform .28s ease,opacity .28s ease;' +
+      (this.state.sticky ? 'transform:translateY(0);opacity:1;pointer-events:auto' : 'transform:translateY(-100%);opacity:0;pointer-events:none');
+
     return {
       t, lang, passportHref, setEs: this.setEs, setEn: this.setEn, esStyle, enStyle,
-      wordmarkSize, topHeroSize, heroSize,
+      wordmarkSize, topHeroSize, heroSize, stickyBarStyle, isMobile,
       cookieChoice: this.state.cookieChoice, acceptCookies: this.acceptCookies, declineCookies: this.declineCookies,
       feedbackMenuOpen: this.state.feedbackMenuOpen, toggleFeedbackMenu: this.toggleFeedbackMenu,
       fabStyle, fabIcon, fabIconTransform,

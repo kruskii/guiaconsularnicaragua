@@ -2,18 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>GuíaConsularNicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior</title>
+<title>Guía Consular Nicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior</title>
 <meta name="description" content="Una guía independiente para nicaragüenses en el exterior: cómo renovar o solicitar el pasaporte nicaragüense en línea, documentos requeridos e información consular.">
-<meta property="og:title" content="GuíaConsularNicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior">
+<meta property="og:title" content="Guía Consular Nicaragua — Renueva tu Pasaporte Nicaragüense desde el Exterior">
 <meta property="og:description" content="Una guía independiente para nicaragüenses en el exterior: cómo renovar o solicitar el pasaporte nicaragüense en línea.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guiaconsularnicaragua.com/pasaporte/es/">
 <meta property="og:locale" content="es_419">
-<meta property="og:image" content="https://guiaconsularnicaragua.com/images/og-image-es.png">
+<meta property="og:image" content="https://guiaconsularnicaragua.com/pasaporte/es/images/og-image-es.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://guiaconsularnicaragua.com/images/og-image-es.png">
+<meta name="twitter:image" content="https://guiaconsularnicaragua.com/pasaporte/es/images/og-image-es.png">
 <link rel="alternate" hreflang="en" href="https://guiaconsularnicaragua.com/pasaporte/en/">
 <link rel="alternate" hreflang="es" href="https://guiaconsularnicaragua.com/pasaporte/es/">
 <link rel="alternate" hreflang="x-default" href="https://guiaconsularnicaragua.com/pasaporte/es/">
@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -47,7 +48,7 @@ a{color:inherit}
 <!-- STICKY SLIM BAR -->
 <div style="{{ stickyBarStyle }}">
   <div style="{{ stickyInnerStyle }}">
-    <a href="#top" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">GuíaConsularNicaragua</a>
+    <a href="#top" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">Guía Consular Nicaragua</a>
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
     <nav style="{{ stickyNavStyle }}">
       <sc-for list="{{ navGroupsComputedSticky }}" as="grp" hint-placeholder-count="4">
@@ -84,9 +85,11 @@ a{color:inherit}
     </div>
     </sc-if>
     <div style="{{ stickyToggleStyle }}">
-      <button onClick="{{ setEs }}" style="{{ esStyleSm }}">ES</button>
-      <span style="color:#c9c3b4">/</span>
-      <button onClick="{{ setEn }}" style="{{ enStyleSm }}">EN</button>
+      <div style="display:flex;align-items:center;gap:7px">
+        <button onClick="{{ setEs }}" style="{{ esStyleSm }}">ES</button>
+        <span style="color:#c9c3b4">/</span>
+        <button onClick="{{ setEn }}" style="{{ enStyleSm }}">EN</button>
+      </div>
     </div>
   </div>
   <div style="height:1px;background:rgba(0,0,0,.1)"></div>
@@ -94,20 +97,22 @@ a{color:inherit}
 
 <!-- MASTHEAD -->
 <header id="top" style="max-width:1180px;margin:0 auto;padding:0 28px">
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:30px 0 22px">
+  <div style="padding:30px 0 22px">
     <div>
-      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">GuíaConsularNicaragua</div>
+      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Guía Consular Nicaragua</div>
       <div style="display:flex;flex-direction:column;height:9px;width:100%;margin-top:6px">
         <div style="flex:1;background:#1A56B0"></div>
         <div style="flex:1;background:#FFFFFF"></div>
         <div style="flex:1;background:#1A56B0"></div>
       </div>
-      <div style="font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#8a8475;margin-top:9px">{{ t.tagline }}</div>
     </div>
-    <div style="display:flex;align-items:center;gap:9px;flex:none;padding-bottom:4px">
-      <button onClick="{{ setEs }}" style="{{ esStyle }}">ES</button>
-      <span style="color:#cbc5b6;font-size:13px">/</span>
-      <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:9px">
+      <div style="font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#8a8475">{{ t.tagline }}</div>
+      <div style="display:flex;align-items:center;gap:9px;flex:none">
+        <button onClick="{{ setEs }}" style="{{ esStyle }}">ES</button>
+        <span style="color:#cbc5b6;font-size:13px">/</span>
+        <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
+      </div>
     </div>
   </div>
   <div style="height:2px;background:#1a1812"></div>
@@ -171,7 +176,7 @@ a{color:inherit}
       <div style="font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#0d5bb0;margin-bottom:15px">{{ t.start.kicker }}</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px">
         <a href="#how" class="np-nav-a" style="display:block;border:1.5px solid #1a1812;background:#fff;padding:18px 20px;text-decoration:none">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:10px"><rect x="3" y="4.5" width="18" height="12" rx="1.3"></rect><path d="M1.5 19.5h21"></path><path d="M9.5 19.5 10.3 17h3.4l0.8 2.5"></path></svg>
+          <i class="bi bi-laptop" style="display:block;margin-bottom:10px;font-size:22px;color:#0d5bb0"></i>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
             <div style="font-family:'Newsreader',serif;font-size:19px;font-weight:600;color:#1a1812;letter-spacing:-.01em">{{ t.start.abroadLabel }}</div>
             <span style="color:#0d5bb0;font-size:18px;flex:none">&rarr;</span>
@@ -179,7 +184,7 @@ a{color:inherit}
           <div style="font-size:13.5px;line-height:1.5;color:#5b5648;margin-top:7px">{{ t.start.abroadSub }}</div>
         </a>
         <a href="#nicaragua" class="np-nav-a" style="display:block;border:1.5px solid #1a1812;background:#fff;padding:18px 20px;text-decoration:none">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:10px"><path d="M4 11.5 12 4l8 7.5"></path><path d="M6 10v9h12v-9"></path><path d="M10 19v-5.5h4V19"></path></svg>
+          <i class="bi bi-bank" style="display:block;margin-bottom:10px;font-size:22px;color:#0d5bb0"></i>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
             <div style="font-family:'Newsreader',serif;font-size:19px;font-weight:600;color:#1a1812;letter-spacing:-.01em">{{ t.start.nicaLabel }}</div>
             <span style="color:#0d5bb0;font-size:18px;flex:none">&rarr;</span>
@@ -187,7 +192,7 @@ a{color:inherit}
           <div style="font-size:13.5px;line-height:1.5;color:#5b5648;margin-top:7px">{{ t.start.nicaSub }}</div>
         </a>
         <a href="#stuck" class="np-nav-a" style="display:block;border:1.5px solid #C6862C;background:#FBF3E4;padding:18px 20px;text-decoration:none">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A6650F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:10px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>
+          <i class="bi bi-clock-history" style="display:block;margin-bottom:10px;font-size:22px;color:#A6650F"></i>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
             <div style="font-family:'Newsreader',serif;font-size:19px;font-weight:600;color:#7A4B0C;letter-spacing:-.01em">{{ t.start.stuckLabel }}</div>
             <span style="color:#A6650F;font-size:18px;flex:none">&rarr;</span>
@@ -223,7 +228,7 @@ a{color:inherit}
       </div>
       <div style="display:flex;gap:16px;align-items:flex-start;border:1px solid #E8C989;background:#FBF3E4;padding:17px 20px;margin:0 0 30px">
         <div style="flex:none;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid #C6862C;display:flex;align-items:center;justify-content:center">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6650F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>
+          <i class="bi bi-clock-history" style="font-size:20px;color:#A6650F"></i>
         </div>
         <div>
           <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8F6B26;margin-bottom:3px">{{ t.start.timeLabel }}</div>
@@ -248,7 +253,7 @@ a{color:inherit}
             <sc-if value="{{ step.isDetour }}" hint-placeholder-val="{{ false }}">
             <div style="display:flex;gap:20px;position:relative">
               <div style="flex:none;width:40px;height:40px;border-radius:11px;background:#FBF3E4;border:2px dashed #C6862C;display:flex;align-items:center;justify-content:center;z-index:1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A6650F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l9.5 16.5h-19z"></path><line x1="12" y1="9.5" x2="12" y2="14"></line><circle cx="12" cy="17.2" r="0.9" fill="#A6650F" stroke="none"></circle></svg>
+                <i class="bi bi-exclamation-triangle" style="font-size:18px;color:#A6650F"></i>
               </div>
               <div style="padding-top:2px;flex:1;min-width:0">{{ step.detourNode }}</div>
             </div>
@@ -294,7 +299,7 @@ a{color:inherit}
           <sc-if value="{{ c.isDivider }}" hint-placeholder-val="{{ false }}">
           <div style="flex:1 1 100%">
             <div style="display:flex;align-items:center;gap:14px;margin:6px 0 12px">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>
+              <i class="bi bi-geo-alt" style="font-size:14px;color:#0d5bb0"></i>
               <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0d5bb0;white-space:nowrap">{{ c.label }}</div>
               <div style="height:1px;background:rgba(0,0,0,.12);flex:1"></div>
             </div>
@@ -379,11 +384,11 @@ a{color:inherit}
           </sc-for>
         </ol>
         <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(13,91,176,.15)">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <i class="bi bi-whatsapp" style="font-size:15px;color:#0d5bb0"></i>
           <div style="font-size:13.5px;line-height:1.5;color:#46423a">{{ t.canada.contactWhatsapp }}</div>
         </div>
         <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="M3 6.5l9 6.5 9-6.5"></path></svg>
+          <i class="bi bi-envelope" style="font-size:15px;color:#0d5bb0"></i>
           <div style="font-size:13.5px;line-height:1.5;color:#46423a">{{ t.canada.contactEmail }}</div>
         </div>
         <ol style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;counter-reset:ca;border-top:1px solid rgba(13,91,176,.15);padding-top:16px">
@@ -477,15 +482,15 @@ a{color:inherit}
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:0 0 32px">
         <div style="border:1px solid rgba(0,0,0,.14);background:#fff;padding:18px 18px 20px">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:12px"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.2-1.8a1 1 0 0 1 .84-.45h5.92a1 1 0 0 1 .84.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5V18a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18z"></path><circle cx="12" cy="13" r="3.4"></circle></svg>
+          <i class="bi bi-camera" style="display:block;margin-bottom:12px;font-size:24px;color:#0d5bb0"></i>
           <div style="font-size:13.5px;line-height:1.5;color:#46423a">{{ t.nicaragua.facts.photo }}</div>
         </div>
         <div style="border:1px solid rgba(0,0,0,.14);background:#fff;padding:18px 18px 20px">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:12px"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"></path></svg>
+          <i class="bi bi-calendar-check" style="display:block;margin-bottom:12px;font-size:24px;color:#0d5bb0"></i>
           <div style="font-size:13.5px;line-height:1.5;color:#46423a">{{ t.nicaragua.facts.delivery }}</div>
         </div>
         <div style="border:1px solid rgba(0,0,0,.14);background:#fff;padding:18px 18px 20px">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d5bb0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:12px"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>
+          <i class="bi bi-clock-history" style="display:block;margin-bottom:12px;font-size:24px;color:#0d5bb0"></i>
           <div style="font-size:13.5px;line-height:1.5;color:#46423a">{{ t.nicaragua.facts.validity }}</div>
         </div>
       </div>
@@ -543,7 +548,7 @@ a{color:inherit}
 
     <!-- FOOTER -->
     <footer style="margin-top:64px;border-top:1px solid rgba(0,0,0,.12);padding-top:22px">
-      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">GuíaConsularNicaragua</div>
+      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">Guía Consular Nicaragua</div>
       <p style="font-size:12.5px;line-height:1.6;color:#9a9384;margin:0">{{ t.footer.text }}</p>
     </footer>
 
@@ -591,8 +596,6 @@ a{color:inherit}
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = {
-    openNavGroupSticky: null,
-    openNavGroupMast: null,
     lang: 'es',
     docTab: 0,
     sticky: false,
@@ -600,6 +603,8 @@ class Component extends DCLogic {
     feedbackMenuOpen: false,
     navMenuOpenSticky: false,
     navMenuOpenMast: false,
+    openNavGroupSticky: null,
+    openNavGroupMast: null,
     openRegions: {},
     portalUrlCopied: false,
     cookieChoice: (typeof localStorage !== 'undefined' && localStorage.getItem('np_cookie_consent')) || null,
@@ -641,8 +646,9 @@ class Component extends DCLogic {
 
   CONTENT = {
       "en": {
-            "tagline": "Community Passport Guide · Worldwide",
+            "tagline": "Passport Guide · Worldwide",
             "homeLabel": "Home",
+            "visaLinkLabel": "Visa Requirements",
             "onThisPage": "On this page",
             "inTheNews": "In the news",
             "verifiedDate": "June 2026",
@@ -669,13 +675,15 @@ class Component extends DCLogic {
                   "nicaSub": "You are in Nicaragua or can travel to Nicaragua.",
                   "stuckLabel": "My application is stuck",
                   "stuckSub": "Applied online and waiting with no update? See how to follow up.",
+                  "visaLabel": "Visa Requirements",
+                  "visaSub": "Check if your country needs a visa to enter Nicaragua.",
                   "timeLabel": "How long it takes",
                   "timeValue": "Up to 3 months",
                   "timeNote": "As of March 2026, that's the official estimate from the Interior Ministry. In practice many applicants have waited longer — apply as early as you can."
             },
             "nav": {
                   "welcome": "Welcome",
-                  "how": "How It Works",
+                  "how": "Applying Online",
                   "documents": "Required Documents",
                   "consulates": "Consulates & Embassies",
                   "canada": "Canada",
@@ -702,7 +710,7 @@ class Component extends DCLogic {
                   "botCheckNote": "The portal shows a \"Verify you are human\" checkbox on load. If the page says it can't connect, don't give up — reopen the link and try again; it usually goes through on a second attempt.",
             },
             "how": {
-                  "title": "How It Works",
+                  "title": "Applying Online",
                   "processTitle": "Process Steps",
                   "intro": "As of March 4, 2026, Nicaraguans abroad can apply for or renew their passport entirely online through the DGME (Dirección General de Migración y Extranjería) — without traveling to Nicaragua.",
                   "steps": [
@@ -1049,7 +1057,7 @@ class Component extends DCLogic {
                   }
             },
             "footer": {
-                  "text": "GuíaConsularNicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and consulate details change frequently — always verify with official sources before acting. Last updated June 2026."
+                  "text": "Guía Consular Nicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and consulate details change frequently — always verify with official sources before acting. Last updated June 2026."
             },
             "news": [
                   {
@@ -1075,8 +1083,9 @@ class Component extends DCLogic {
             ]
       },
       "es": {
-            "tagline": "Guía Comunitaria de Pasaporte · Mundial",
+            "tagline": "Guía de Pasaporte · Mundial",
             "homeLabel": "Inicio",
+            "visaLinkLabel": "Requisitos de Visa",
             "onThisPage": "En esta página",
             "inTheNews": "En las noticias",
             "verifiedDate": "junio 2026",
@@ -1103,13 +1112,15 @@ class Component extends DCLogic {
                   "nicaSub": "Estás en Nicaragua o puedes viajar a Nicaragua.",
                   "stuckLabel": "Mi solicitud está atascada",
                   "stuckSub": "¿Aplicaste en línea y esperas sin novedad? Mira cómo dar seguimiento.",
+                  "visaLabel": "Requisitos de Visa",
+                  "visaSub": "Averigua si tu país necesita visa para entrar a Nicaragua.",
                   "timeLabel": "Cuánto tarda",
                   "timeValue": "Hasta 3 meses",
                   "timeNote": "Desde marzo de 2026, esa es la estimación oficial del Ministerio del Interior. En la práctica muchos han esperado más — tramita lo antes posible."
             },
             "nav": {
                   "welcome": "Bienvenido",
-                  "how": "Cómo funciona",
+                  "how": "Cómo tramitar en línea",
                   "documents": "Documentos",
                   "consulates": "Consulados y Embajadas",
                   "canada": "Canadá",
@@ -1136,7 +1147,7 @@ class Component extends DCLogic {
                   "botCheckNote": "El portal muestra una casilla de \"Verifica que eres humano\" al cargar. Si la página dice que no puede conectarse, no te rindas — vuelve a abrir el enlace e inténtalo de nuevo; suele funcionar en el segundo intento.",
             },
             "how": {
-                  "title": "Cómo funciona",
+                  "title": "Cómo tramitar en línea",
                   "processTitle": "Pasos del proceso",
                   "intro": "Desde el 4 de marzo de 2026, los nicaragüenses en el exterior pueden solicitar o renovar su pasaporte completamente en línea a través de la DGME (Dirección General de Migración y Extranjería) — sin viajar a Nicaragua.",
                   "steps": [
@@ -1481,7 +1492,7 @@ class Component extends DCLogic {
                   }
             },
             "footer": {
-                  "text": "GuíaConsularNicaragua es un recurso comunitario independiente, sin afiliación con el Gobierno de Nicaragua. Los procedimientos, tarifas y datos consulares cambian frecuentemente — verifica siempre con fuentes oficiales antes de actuar. Última actualización: junio 2026."
+                  "text": "Guía Consular Nicaragua es un recurso comunitario independiente, sin afiliación con el Gobierno de Nicaragua. Los procedimientos, tarifas y datos consulares cambian frecuentemente — verifica siempre con fuentes oficiales antes de actuar. Última actualización: junio 2026."
             },
             "news": [
                   {
@@ -1512,6 +1523,8 @@ class Component extends DCLogic {
     return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:14px;font-weight:600;padding:11px 16px;letter-spacing:.01em;border-bottom:2px solid ' +
       (active ? '#0d5bb0' : 'transparent') + ';color:' + (active ? '#0d5bb0' : '#8a8475') + ';margin-bottom:-1px;transition:color .15s';
   }
+  setEn = () => { window.location.href = '/pasaporte/en/'; };
+  setEs = () => { };
   langBtnStyle(active, small) {
     const fs = small ? '12px' : '13px';
     return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:' + fs +
@@ -1684,25 +1697,7 @@ class Component extends DCLogic {
     const showNews = this.props.showNews !== false;
     const showFlag = this.props.showFlagStripe !== false;
     const stuckIconPaths = [
-      React.createElement(React.Fragment, null,
-        React.createElement('path', { d: 'M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z' }),
-        React.createElement('circle', { cx: '12', cy: '12', r: '2.5' })),
-      React.createElement('path', { d: 'M4.5 4h3l1.2 3.2-1.8 1.3a11 11 0 0 0 4.6 4.6l1.3-1.8L16.5 15v3a1.5 1.5 0 0 1-1.6 1.5A13 13 0 0 1 3 7.6 1.5 1.5 0 0 1 4.5 4z' }),
-      React.createElement(React.Fragment, null,
-        React.createElement('circle', { cx: '12', cy: '8', r: '3' }),
-        React.createElement('path', { d: 'M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5' })),
-      React.createElement(React.Fragment, null,
-        React.createElement('rect', { x: '2.5', y: '6.5', width: '19', height: '14', rx: '2' }),
-        React.createElement('circle', { cx: '12', cy: '13.5', r: '4' }),
-        React.createElement('path', { d: 'M8.5 6.5l1.3-2h4.4l1.3 2' })),
-      React.createElement('path', { d: 'M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.8 8.8 0 0 1-3.6-.7L3 20.5l1.4-5.1a8.3 8.3 0 0 1-.9-3.9 8.4 8.4 0 0 1 8.9-8.4 8.6 8.6 0 0 1 8.6 8.4z' }),
-      React.createElement(React.Fragment, null,
-        React.createElement('path', { d: 'M10 14a4.5 4.5 0 0 0 6.4.4l2.6-2.6a4.5 4.5 0 0 0-6.4-6.4l-1.5 1.5' }),
-        React.createElement('path', { d: 'M14 10a4.5 4.5 0 0 0-6.4-.4L5 12.2a4.5 4.5 0 0 0 6.4 6.4l1.5-1.5' })),
-      React.createElement(React.Fragment, null,
-        React.createElement('rect', { x: '2.5', y: '5.5', width: '19', height: '13', rx: '2' }),
-        React.createElement('path', { d: 'M2.5 9.5h19' }),
-        React.createElement('path', { d: 'M5.5 15h4' })),
+      'bi-eye', 'bi-telephone', 'bi-person', 'bi-camera', 'bi-chat-dots', 'bi-link-45deg', 'bi-credit-card',
     ];
     const stuckItems = t.stuck.items.map((it, i) => ({
       n: String(i + 1), lead: it.lead,
@@ -1714,19 +1709,20 @@ class Component extends DCLogic {
                 React.createElement('span', { style: { color: '#A6650F', fontWeight: 700, flex: 'none' } }, '\u25B8'),
                 React.createElement('span', null, b)))))
         : it.body,
-      icon: React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: '#A6650F', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round' }, stuckIconPaths[i % stuckIconPaths.length]),
+      icon: React.createElement('i', { className: 'bi ' + stuckIconPaths[i % stuckIconPaths.length], style: { fontSize: '15px', color: '#A6650F' } }),
     }));
     const navItems = Object.keys(t.nav).map((id) => ({ id: id === 'welcome' ? 'top' : id, label: t.nav[id], href: '#' + (id === 'welcome' ? 'top' : id) }));
-    const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '../../' }].concat(navItems);
+    const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '/' }].concat(navItems).concat([{ id: 'visa', label: t.visaLinkLabel, href: '/visa/' }]);
 
     const closeNavGroupSticky = () => this.setState({ openNavGroupSticky: null });
     const closeNavGroupMast = () => this.setState({ openNavGroupMast: null });
     const NAV_GROUP_DEFS = [
-      { key: 'home', single: true, external: true, label: t.homeLabel, href: '../../' },
+      { key: 'home', single: true, external: true, label: t.homeLabel, href: '/' },
       { key: 'welcome', single: true, id: 'welcome' },
       { key: 'process', ids: ['how', 'documents', 'nicaragua', 'tips'] },
       { key: 'where', ids: ['consulates', 'canada'] },
       { key: 'help', ids: showNews ? ['stuck', 'faq', 'news'] : ['stuck', 'faq'] },
+      { key: 'visa', single: true, external: true, label: t.visaLinkLabel, href: '/visa/' },
     ];
     const buildNavGroups = (stateKey, closeFn) => NAV_GROUP_DEFS.map((def) => {
       if (def.single) {
@@ -1775,24 +1771,27 @@ class Component extends DCLogic {
 
     const sm = this.state.isMobile;
     const stickyInnerStyle = sm
-      ? 'max-width:1180px;margin:0 auto;padding:9px 18px;display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;row-gap:7px'
+      ? 'max-width:1180px;margin:0 auto;padding:14px 18px 9px;display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;row-gap:7px'
       : 'max-width:1180px;margin:0 auto;padding:0 28px;height:52px;display:flex;align-items:center;gap:24px';
     const fadeMask = ';-webkit-mask-image:linear-gradient(to right,#000 84%,transparent);mask-image:linear-gradient(to right,#000 84%,transparent)';
     const stickyNavStyle = sm
-      ? 'display:flex;justify-content:flex-start;gap:18px;overflow-x:auto;flex:0 0 100%;order:3;scrollbar-width:none' + fadeMask
-      : 'display:flex;justify-content:flex-start;gap:18px;flex:1;min-width:0;order:2;flex-wrap:wrap';
+      ? 'display:flex;align-items:center;justify-content:flex-start;gap:18px;flex:0 0 100%;order:3'
+      : 'display:flex;align-items:center;justify-content:flex-start;gap:18px;flex:1;order:2';
     const mastNavStyle = sm
-      ? 'display:flex;justify-content:flex-start;gap:26px;overflow-x:auto;padding:13px 0;scrollbar-width:none' + fadeMask
-      : 'display:flex;align-items:center;justify-content:center;gap:26px;padding:13px 0;flex-wrap:wrap';
+      ? 'display:flex;align-items:center;justify-content:center;gap:26px;padding:13px 0'
+      : 'display:flex;align-items:center;justify-content:center;gap:26px;padding:13px 0';
+    const mastToggleGroupStyle = sm
+      ? 'display:flex;align-items:center;gap:20px;flex:1 0 100%;padding-bottom:4px;flex-wrap:wrap;justify-content:space-between'
+      : 'display:flex;align-items:center;gap:20px;flex:none;padding-bottom:4px;flex-wrap:wrap;justify-content:flex-end';
     const stickyToggleStyle = sm
-      ? 'display:flex;align-items:center;gap:7px;flex:none;order:2;margin-left:auto'
+      ? 'display:flex;align-items:center;gap:16px;flex:none;order:2;margin-left:auto'
       : 'display:flex;align-items:center;gap:7px;flex:none;order:3';
 
     const stickyBarStyle = 'position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,248,243,.94);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);transition:transform .28s ease,opacity .28s ease;' +
       (this.state.sticky ? 'transform:translateY(0);opacity:1;pointer-events:auto' : 'transform:translateY(-100%);opacity:0;pointer-events:none');
 
     return {
-      t, lang, navItems, quickNavItems, showNews, showFlag, howSteps, tipsItems, faqItems, canadaSteps, canadaStepsA, canadaStepsB, consulateItems, sectionTags, worldNoteNode, regionGroups, stuckItems, stuckPilotBody1,
+      t, lang, navItems, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast, showNews, showFlag, howSteps, tipsItems, faqItems, canadaSteps, canadaStepsA, canadaStepsB, consulateItems, sectionTags, worldNoteNode, regionGroups, stuckItems, stuckPilotBody1,
       nicaraguaNote,
       portalUrlFull: 'https://' + PORTAL_URL,
       portalUrlCopied: this.state.portalUrlCopied,
@@ -1801,7 +1800,6 @@ class Component extends DCLogic {
       isMobile: this.state.isMobile,
       isDesktop: !this.state.isMobile,
       verifiedTag: (lang === 'es' ? 'Verificado ' : 'Verified ') + t.verifiedDate,
-      navGroupsComputedSticky, navGroupsComputedMast,
       jumpTo: (e) => { const v = e.target.value; if (v) { window.location.hash = v; e.target.selectedIndex = 0; } },
       jumpSelectStyle: 'font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:600;color:#23211a;background:#fff;border:1px solid rgba(0,0,0,.22);padding:9px 12px;width:100%;border-radius:0',
       jumpSelectStyleSm: 'font-family:Archivo,system-ui,sans-serif;font-size:12.5px;font-weight:600;color:#23211a;background:#fff;border:1px solid rgba(0,0,0,.22);padding:7px 10px;flex:0 0 100%;order:3;border-radius:0',
@@ -1847,9 +1845,9 @@ class Component extends DCLogic {
           window.Tally.openPopup('VLyPgN', { layout: 'modal', width: 700, overlay: true, emoji: { text: '👋', animation: 'wave' } });
         }
       },
-      stickyBarStyle, stickyInnerStyle, stickyNavStyle, stickyToggleStyle, mastNavStyle,
-      setEn: () => { window.location.href = '../en/'; },
-      setEs: () => { window.location.href = '../es/'; },
+      stickyBarStyle, stickyInnerStyle, stickyNavStyle, stickyToggleStyle, mastNavStyle, mastToggleGroupStyle,
+      setEn: this.setEn,
+      setEs: this.setEs,
       enStyle: this.langBtnStyle(lang === 'en', false),
       esStyle: this.langBtnStyle(lang === 'es', false),
       enStyleSm: this.langBtnStyle(lang === 'en', true),

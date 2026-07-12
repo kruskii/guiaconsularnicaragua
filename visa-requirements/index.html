@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nicaragua Visa Requirements | GuíaConsularNicaragua</title>
+<title>Nicaragua Visa Requirements | Guía Consular Nicaragua</title>
 <meta name="description" content="Find out if your country needs a visa to enter Nicaragua and how to apply — independent guide for travelers.">
 <meta property="og:title" content="Nicaragua Visa Requirements">
 <meta property="og:description" content="Find out if your country needs a visa to enter Nicaragua and how to apply.">
@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -42,7 +43,7 @@ a{color:inherit}
 <!-- STICKY SLIM BAR -->
 <div style="{{ stickyBarStyle }}">
   <div style="{{ stickyInnerStyle }}">
-    <a href="{{ passportHref }}" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">GuíaConsularNicaragua</a>
+    <a href="{{ passportHref }}" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">Guía Consular Nicaragua</a>
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
     <nav style="{{ stickyNavStyle }}">
       <sc-for list="{{ navGroupsComputedSticky }}" as="grp" hint-placeholder-count="4">
@@ -91,18 +92,18 @@ a{color:inherit}
 
 <!-- MASTHEAD -->
 <header id="top" style="max-width:1180px;margin:0 auto;padding:0 28px">
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:30px 0 22px;flex-wrap:wrap">
-    <a href="{{ passportHref }}" style="text-decoration:none">
-      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">GuíaConsularNicaragua</div>
+  <div style="padding:30px 0 22px">
+    <a href="{{ passportHref }}" style="text-decoration:none;display:block">
+      <div style="font-family:'Newsreader',serif;font-weight:700;font-size:34px;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent">Guía Consular Nicaragua</div>
       <div style="display:flex;flex-direction:column;height:9px;width:100%;margin-top:6px">
         <div style="flex:1;background:#1A56B0"></div>
         <div style="flex:1;background:#FFFFFF"></div>
         <div style="flex:1;background:#1A56B0"></div>
       </div>
-      <div style="font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#8a8475;margin-top:9px">{{ t.tagline }}</div>
     </a>
-    <div style="{{ mastToggleGroupStyle }}">
-      <div style="display:flex;align-items:center;gap:9px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:9px">
+      <div style="font-size:11.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#8a8475">{{ t.tagline }}</div>
+      <div style="display:flex;align-items:center;gap:9px;flex:none">
         <button onClick="{{ setEs }}" style="{{ esStyle }}">ES</button>
         <span style="color:#cbc5b6;font-size:13px">/</span>
         <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
@@ -158,7 +159,7 @@ a{color:inherit}
     <p style="font-family:'Newsreader',serif;font-size:21px;line-height:1.5;color:#6b6657;margin:26px 0 0;font-weight:400">{{ t.subtitle }}</p>
 
     <!-- 00 DO I NEED A VISA -->
-    <section id="need" style="scroll-margin-top:72px;margin-top:40px;border-top:2px solid #1a1812;padding-top:22px">
+    <section id="need" style="scroll-margin-top:72px;margin-top:20px;padding-top:0">
       <p style="font-size:16.5px;line-height:1.62;color:#3a362c;margin:0">{{ t.need.p1 }}</p>
     </section>
 
@@ -173,7 +174,7 @@ a{color:inherit}
 
       <div style="position:relative">
         <div style="display:flex;align-items:center;gap:10px;border:1.5px solid #1a1812;background:#fff;padding:4px 4px 4px 16px">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8a8475" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+          <i class="bi bi-search" style="font-size:16px;color:#8a8475"></i>
           <input value="{{ queryValue }}" onChange="{{ onQueryChange }}" placeholder="{{ t.lookup.placeholder }}" style="flex:1;border:none;outline:none;background:none;font-family:inherit;font-size:16px;padding:11px 0;color:#1a1812;min-width:0">
           <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
             <button onClick="{{ clearQuery }}" aria-label="Clear" style="flex:none;width:32px;height:32px;border:none;background:#f2efe6;color:#5b5648;font-size:15px;cursor:pointer;border-radius:50%">&times;</button>
@@ -306,6 +307,16 @@ a{color:inherit}
         <p style="font-size:12.5px;line-height:1.5;color:#9a9384;margin:12px 0 0">{{ t.portal.botCheckNote }}</p>
         <img src="../images/portal-screenshot.png" alt="" style="display:block;width:100%;height:auto;aspect-ratio:2480/1182;margin-top:20px;object-fit:contain">
       </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;border:1px solid #E8C989;background:#FBF3E4;padding:17px 20px;margin:0 0 30px">
+        <div style="flex:none;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid #C6862C;display:flex;align-items:center;justify-content:center">
+          <i class="bi bi-clock-history" style="font-size:20px;color:#A6650F"></i>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8F6B26;margin-bottom:3px">{{ t.apply.timingLabel }}</div>
+          <div style="font-size:14.5px;line-height:1.58;color:#6b6657">{{ t.apply.timingBody }}</div>
+        </div>
+      </div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0d5bb0;margin-bottom:14px">{{ t.apply.stepsLabel }}</div>
       <div style="position:relative;padding-left:4px;margin-bottom:28px">
         <div style="position:absolute;left:19px;top:18px;bottom:18px;width:2px;background:rgba(0,0,0,.1)"></div>
         <div style="display:flex;flex-direction:column;gap:26px">
@@ -318,15 +329,6 @@ a{color:inherit}
               </div>
             </div>
           </sc-for>
-        </div>
-      </div>
-      <div style="display:flex;gap:16px;align-items:flex-start;border:1px solid #E8C989;background:#FBF3E4;padding:17px 20px;margin:0 0 30px">
-        <div style="flex:none;width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid #C6862C;display:flex;align-items:center;justify-content:center">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#A6650F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>
-        </div>
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8F6B26;margin-bottom:3px">{{ t.apply.timingLabel }}</div>
-          <div style="font-size:14.5px;line-height:1.58;color:#6b6657">{{ t.apply.timingBody }}</div>
         </div>
       </div>
       <div style="display:flex;gap:10px;align-items:flex-start;background:#eef4fa;border:1px solid rgba(13,91,176,.2);padding:14px 16px;margin:0 0 22px">
@@ -396,7 +398,7 @@ a{color:inherit}
 
     <!-- FOOTER -->
     <footer style="margin-top:64px;border-top:1px solid rgba(0,0,0,.12);padding-top:22px">
-      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">GuíaConsularNicaragua</div>
+      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">Guía Consular Nicaragua</div>
       <p style="font-size:12.5px;line-height:1.6;color:#9a9384;margin:0">{{ t.footer.text }}</p>
     </footer>
 
@@ -492,7 +494,7 @@ class Component extends DCLogic {
 
   CONTENT = {
     en: {
-      tagline: 'Visa Requirements Guide',
+      tagline: 'Visa Requirements Guide · Worldwide',
       onThisPage: 'On this page',
       kicker: 'Updated July 2026',
       headline: 'Nicaragua Visa Requirements',
@@ -532,6 +534,7 @@ class Component extends DCLogic {
       apply: {
         title: 'How to Apply for a Nicaraguan Visa',
         portalLabel: 'Official Government Portal',
+        stepsLabel: 'Process Steps',
         timingLabel: 'How long it takes',
         timingBody: 'The portal confirms approved visas are emailed 15 days before your scheduled entry date, not right after applying. Apply close to your trip, not months in advance.',
         feeSeparateNote: '\u2139\ufe0f Your visa fee is separate from the tourist card. Even after your visa is approved and paid for online, you\u2019ll still need to pay the $10 USD Tourist Card fee in cash upon arrival — same as visa-exempt travelers. Bring small USD bills, since Nicaraguan customs does not accept credit or debit cards.',
@@ -577,7 +580,7 @@ class Component extends DCLogic {
         { q:'When will I receive my visa outcome/notification?', body:'Notifications aren\u2019t immediate. The portal confirms approved visas are emailed about 15 days before your scheduled entry date — not right after you apply. Check "Mis Trámites" in the portal for your current status in the meantime.' },
       ],
       footer: {
-        text: 'GuíaConsularNicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Visa categories, fees, and requirements change frequently — always verify with the official source before traveling. Last updated July 2026.',
+        text: 'Guía Consular Nicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Visa categories, fees, and requirements change frequently — always verify with the official source before traveling. Last updated July 2026.',
       },
       cookieBanner: { text: 'This site uses cookies to understand how visitors use this guide.', decline: 'Decline', accept: 'Accept' },
       reportLabel: 'Report an issue',
@@ -596,7 +599,7 @@ class Component extends DCLogic {
       },
     },
     es: {
-      tagline: 'Guía de Requisitos de Visa',
+      tagline: 'Guía de Requisitos de Visa · Mundial',
       onThisPage: 'En esta página',
       kicker: 'Actualizado julio 2026',
       headline: 'Requisitos de Visa para Nicaragua',
@@ -636,6 +639,7 @@ class Component extends DCLogic {
       apply: {
         title: 'Cómo Tramitar una Visa para Nicaragua',
         portalLabel: 'Portal Oficial del Gobierno',
+        stepsLabel: 'Pasos del Proceso',
         timingLabel: 'Cuánto tarda',
         timingBody: 'El portal confirma que las visas aprobadas se envían por correo 15 días antes de la fecha de entrada programada, no justo después de aplicar. Tramita cerca de tu viaje, no con meses de anticipación.',
         feeSeparateNote: '\u2139\ufe0f Tu tarifa de visa es independiente de la tarjeta de turista. Incluso después de que tu visa esté aprobada y pagada en línea, deberás pagar la tarifa de Tarjeta de Turista de $10 USD en efectivo al llegar — igual que los viajeros exentos de visa. Trae billetes pequeños en USD, ya que la aduana nicaragüense no acepta tarjetas de crédito o débito.',
@@ -681,7 +685,7 @@ class Component extends DCLogic {
         { q:'¿Cuándo recibiré el resultado/notificación de mi visa?', body:'La notificación no es inmediata. El portal confirma que las visas aprobadas se envían por correo unos 15 días antes de tu fecha de entrada programada — no justo después de aplicar. Mientras tanto, revisa "Mis Trámites" en el portal para ver tu estado actual.' },
       ],
       footer: {
-        text: 'GuíaConsularNicaragua es un recurso comunitario independiente, sin afiliación ni respaldo del Gobierno de Nicaragua. Las categorías de visa, tarifas y requisitos cambian con frecuencia — verifica siempre con la fuente oficial antes de viajar. Última actualización julio 2026.',
+        text: 'Guía Consular Nicaragua es un recurso comunitario independiente, sin afiliación ni respaldo del Gobierno de Nicaragua. Las categorías de visa, tarifas y requisitos cambian con frecuencia — verifica siempre con la fuente oficial antes de viajar. Última actualización julio 2026.',
       },
       cookieBanner: { text: 'Este sitio usa cookies para entender cómo los visitantes usan esta guía.', decline: 'Rechazar', accept: 'Aceptar' },
       reportLabel: 'Reportar un problema',
@@ -734,7 +738,7 @@ class Component extends DCLogic {
     const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '../' }].concat(t.quickNav
       .filter((item) => item.id !== 'lookup')
       .map((item) => ({ ...item, href: '#' + item.id })))
-      .concat([{ id: 'passport', label: t.passportLinkLabel, href: (lang === 'en' ? '../pasaporte/en/' : '../pasaporte/es/') }]);
+      .concat([{ id: 'passport', label: t.passportLinkLabel, href: passportHref }]);
 
     const closeNavGroupSticky = () => this.setState({ openNavGroupSticky: null });
     const closeNavGroupMast = () => this.setState({ openNavGroupMast: null });
@@ -746,7 +750,7 @@ class Component extends DCLogic {
       { key: 'requirements', ids: ['categoryc', 'novisa'] },
       { key: 'applying', ids: ['apply', 'verify', 'noembassy'] },
       { key: 'summary', single: true, id: 'summary' },
-      { key: 'passport', single: true, external: true, label: t.passportLinkLabel, href: (lang === 'en' ? '../pasaporte/en/' : '../pasaporte/es/') },
+      { key: 'passport', single: true, external: true, label: t.passportLinkLabel, href: passportHref },
     ];
     const buildNavGroups = (stateKey, closeFn) => NAV_GROUP_DEFS.map((def) => {
       if (def.single) {
@@ -838,7 +842,7 @@ class Component extends DCLogic {
     }));
 
     const mastToggleGroupStyle = isMobile
-      ? 'display:flex;align-items:center;gap:20px;flex:1 0 100%;padding-bottom:4px;flex-wrap:wrap;justify-content:space-between'
+      ? 'display:flex;align-items:center;gap:20px;flex:none;padding-bottom:4px;justify-content:flex-end'
       : 'display:flex;align-items:center;gap:20px;flex:none;padding-bottom:4px;flex-wrap:wrap;justify-content:flex-end';
     const headlineStyle = "font-family:'Newsreader',serif;font-weight:700;font-size:" + (isMobile ? '30px' : '42px') + ";line-height:1.1;letter-spacing:-.02em;color:#161410;margin:0";
     const h2Style = "font-family:'Newsreader',serif;font-weight:600;font-size:" + (isMobile ? '25px' : '29px') + ";letter-spacing:-.015em;color:#1a1812;margin:0";
@@ -850,11 +854,11 @@ class Component extends DCLogic {
 
     const stickyBarStyle = 'position:fixed;top:0;left:0;right:0;z-index:60;background:#faf8f3;transform:translateY(' + (sticky ? '0' : '-100%') + ');transition:transform .25s ease';
     const stickyInnerStyle = isMobile
-      ? 'max-width:1180px;margin:0 auto;padding:9px 18px;display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;row-gap:7px'
+      ? 'max-width:1180px;margin:0 auto;padding:14px 18px 9px;display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;row-gap:7px'
       : 'max-width:1180px;margin:0 auto;padding:11px 28px;display:flex;align-items:center;gap:22px;flex-wrap:nowrap';
     const stickyNavStyle = 'display:flex;align-items:center;gap:18px;flex:1;min-width:0;order:2';
     const stickyToggleStyle = isMobile
-      ? 'display:flex;align-items:center;gap:16px;flex:1 0 100%;order:4;justify-content:space-between'
+      ? 'display:flex;align-items:center;gap:16px;flex:none;order:2;margin-left:auto'
       : 'display:flex;align-items:center;gap:7px;flex:none;order:3;margin-left:auto';
     const mastNavStyle = 'display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;padding:14px 0';
     const jumpSelectStyle = 'font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:600;color:#23211a;background:#fff;border:1px solid rgba(0,0,0,.22);padding:9px 12px;width:100%';
@@ -865,7 +869,7 @@ class Component extends DCLogic {
     const fabIconTransform = this.state.feedbackMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
 
     return {
-      t, lang, isMobile, isDesktop, sticky, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast,
+      t, lang, passportHref, isMobile, isDesktop, sticky, quickNavItems, navGroupsComputedSticky, navGroupsComputedMast,
       setEs: this.setEs, setEn: this.setEn, esStyle, enStyle, esStyleSm, enStyleSm,
       navMenuOpenSticky: this.state.navMenuOpenSticky, toggleNavMenuSticky: this.toggleNavMenuSticky, closeNavMenuSticky: this.closeNavMenuSticky,
       navMenuOpenMast: this.state.navMenuOpenMast, toggleNavMenuMast: this.toggleNavMenuMast, closeNavMenuMast: this.closeNavMenuMast,
