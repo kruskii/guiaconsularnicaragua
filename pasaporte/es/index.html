@@ -50,8 +50,22 @@ a{color:inherit}
     <a href="#top" class="np-nav-a" style="font-family:'Newsreader',serif;font-weight:600;font-size:18px;letter-spacing:-.01em;background:linear-gradient(90deg,#1A56B0 0%,#0D1F3C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;white-space:nowrap;flex:none;order:1">NicaPasaporte</a>
     <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
     <nav style="{{ stickyNavStyle }}">
-      <sc-for list="{{ quickNavItems }}" as="item" hint-placeholder-count="6">
-        <a href="{{ item.href }}" class="np-nav-a" style="font-size:12.5px;font-weight:500;white-space:nowrap;letter-spacing:.01em">{{ item.label }}</a>
+      <sc-for list="{{ navGroupsComputedSticky }}" as="grp" hint-placeholder-count="4">
+        <sc-if value="{{ grp.isSingle }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ grp.href }}" class="np-nav-a" style="font-size:12.5px;font-weight:500;white-space:nowrap;letter-spacing:.01em">{{ grp.label }}</a>
+        </sc-if>
+        <sc-if value="{{ grp.isGroup }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative;flex:none">
+          <button onClick="{{ grp.onToggle }}" style="display:inline-flex;align-items:center;gap:5px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;color:#3a362c;font-size:12.5px;font-weight:500;white-space:nowrap;letter-spacing:.01em">{{ grp.label }}<span style="{{ grp.caretStyle }};font-size:9px;color:#8a8475">&#9662;</span></button>
+          <sc-if value="{{ grp.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:calc(100% + 10px);left:0;background:#fff;border:1px solid rgba(0,0,0,.2);box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:65;min-width:200px">
+              <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="3">
+                <a href="{{ item.href }}" onClick="{{ grp.onItemClick }}" style="display:block;padding:10px 14px;font-size:12.5px;font-weight:600;color:#23211a;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.06);white-space:nowrap">{{ item.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
       </sc-for>
     </nav>
     </sc-if>
@@ -99,8 +113,22 @@ a{color:inherit}
   <div style="height:2px;background:#1a1812"></div>
   <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
   <nav style="{{ mastNavStyle }}">
-    <sc-for list="{{ quickNavItems }}" as="item" hint-placeholder-count="9">
-      <a href="{{ item.href }}" class="np-nav-a" style="font-size:13px;font-weight:600;white-space:nowrap;letter-spacing:.01em">{{ item.label }}</a>
+    <sc-for list="{{ navGroupsComputedMast }}" as="grp" hint-placeholder-count="4">
+      <sc-if value="{{ grp.isSingle }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ grp.href }}" class="np-nav-a" style="font-size:13px;font-weight:600;white-space:nowrap;letter-spacing:.01em">{{ grp.label }}</a>
+      </sc-if>
+      <sc-if value="{{ grp.isGroup }}" hint-placeholder-val="{{ true }}">
+      <div style="position:relative;flex:none">
+        <button onClick="{{ grp.onToggle }}" style="display:inline-flex;align-items:center;gap:6px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;color:#3a362c;font-size:13px;font-weight:600;white-space:nowrap;letter-spacing:.01em">{{ grp.label }}<span style="{{ grp.caretStyle }};font-size:10px;color:#8a8475">&#9662;</span></button>
+        <sc-if value="{{ grp.isOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:calc(100% + 12px);left:0;background:#fff;border:1px solid rgba(0,0,0,.2);box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:65;min-width:210px">
+            <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="3">
+              <a href="{{ item.href }}" onClick="{{ grp.onItemClick }}" style="display:block;padding:11px 16px;font-size:13px;font-weight:600;color:#23211a;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.06);white-space:nowrap">{{ item.label }}</a>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      </sc-if>
     </sc-for>
   </nav>
   </sc-if>
@@ -563,6 +591,8 @@ a{color:inherit}
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = {
+    openNavGroupSticky: null,
+    openNavGroupMast: null,
     lang: 'es',
     docTab: 0,
     sticky: false,
@@ -653,6 +683,11 @@ class Component extends DCLogic {
                   "faq": "FAQ",
                   "nicaragua": "In Nicaragua",
                   "news": "In the News"
+            },
+            "navGroups": {
+                  "process": "Applying",
+                  "where": "Consulates & Locations",
+                  "help": "Help & News"
             },
             "portal": {
                   "title": "The Official Online Portal",
@@ -1082,6 +1117,11 @@ class Component extends DCLogic {
                   "faq": "Preguntas Frecuentes",
                   "nicaragua": "En Nicaragua",
                   "news": "En las noticias"
+            },
+            "navGroups": {
+                  "process": "Tramitar",
+                  "where": "Consulados y Ubicaciones",
+                  "help": "Ayuda y noticias"
             },
             "portal": {
                   "title": "El portal oficial en línea",
@@ -1678,6 +1718,35 @@ class Component extends DCLogic {
     const navItems = Object.keys(t.nav).map((id) => ({ id: id === 'welcome' ? 'top' : id, label: t.nav[id], href: '#' + (id === 'welcome' ? 'top' : id) }));
     const quickNavItems = [{ id: 'home', label: t.homeLabel, href: '../../' }].concat(navItems);
 
+    const closeNavGroupSticky = () => this.setState({ openNavGroupSticky: null });
+    const closeNavGroupMast = () => this.setState({ openNavGroupMast: null });
+    const NAV_GROUP_DEFS = [
+      { key: 'home', single: true, external: true, label: t.homeLabel, href: '../../' },
+      { key: 'welcome', single: true, id: 'welcome' },
+      { key: 'process', ids: ['how', 'documents', 'nicaragua', 'tips'] },
+      { key: 'where', ids: ['consulates', 'canada'] },
+      { key: 'help', ids: showNews ? ['stuck', 'faq', 'news'] : ['stuck', 'faq'] },
+    ];
+    const buildNavGroups = (stateKey, closeFn) => NAV_GROUP_DEFS.map((def) => {
+      if (def.single) {
+        return { key: def.key, isSingle: true, isGroup: false, label: def.label || t.nav[def.id], href: def.href || '#top' };
+      }
+      const isOpen = this.state[stateKey] === def.key;
+      return {
+        key: def.key,
+        isSingle: false,
+        isGroup: true,
+        label: t.navGroups[def.key],
+        isOpen,
+        onToggle: () => this.setState((s) => ({ [stateKey]: s[stateKey] === def.key ? null : def.key })),
+        onItemClick: closeFn,
+        caretStyle: 'display:inline-block;transform:rotate(' + (isOpen ? '180deg' : '0deg') + ');transition:transform .15s',
+        items: def.ids.map((id) => ({ label: t.nav[id], href: '#' + id })),
+      };
+    });
+    const navGroupsComputedSticky = buildNavGroups('openNavGroupSticky', closeNavGroupSticky);
+    const navGroupsComputedMast = buildNavGroups('openNavGroupMast', closeNavGroupMast);
+
     const docTabs = t.documents.tabs.map((tab, i) => ({
       label: tab.label,
       btnStyle: this.tabBtnStyle(i === this.state.docTab),
@@ -1731,6 +1800,7 @@ class Component extends DCLogic {
       isMobile: this.state.isMobile,
       isDesktop: !this.state.isMobile,
       verifiedTag: (lang === 'es' ? 'Verificado ' : 'Verified ') + t.verifiedDate,
+      navGroupsComputedSticky, navGroupsComputedMast,
       jumpTo: (e) => { const v = e.target.value; if (v) { window.location.hash = v; e.target.selectedIndex = 0; } },
       jumpSelectStyle: 'font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:600;color:#23211a;background:#fff;border:1px solid rgba(0,0,0,.22);padding:9px 12px;width:100%;border-radius:0',
       jumpSelectStyleSm: 'font-family:Archivo,system-ui,sans-serif;font-size:12.5px;font-weight:600;color:#23211a;background:#fff;border:1px solid rgba(0,0,0,.22);padding:7px 10px;flex:0 0 100%;order:3;border-radius:0',
