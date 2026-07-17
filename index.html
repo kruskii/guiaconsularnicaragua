@@ -42,7 +42,7 @@ a:hover{color:#0a4890}
 .np-card:hover{border-color:#0d5bb0;box-shadow:0 10px 28px rgba(13,91,176,.14);transform:translateY(-2px)}
 </style>
 </helmet>
-<div style="font-family:'Archivo',system-ui,sans-serif;color:#23211a;background:#faf8f3;min-height:100vh">
+<div style="font-family:'Archivo',system-ui,sans-serif;color:#23211a;min-height:100vh;background:linear-gradient(rgba(250,248,243,.62),rgba(250,248,243,.62)),url('images/hero-volcano.jpg') center top/cover fixed">
 
 <!-- STICKY SLIM BAR (mobile) -->
 <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
@@ -69,7 +69,7 @@ a:hover{color:#0a4890}
         <div style="flex:1;background:#FFFFFF"></div>
         <div style="flex:1;background:#1A56B0"></div>
       </div>
-      <div style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8a8475;margin-top:9px">{{ t.tagline }}</div>
+      <div style="font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#5f5a4c;margin-top:9px">{{ t.tagline }}</div>
     </div>
     <div style="display:flex;align-items:center;gap:9px;flex:none;padding-bottom:4px">
       <button onClick="{{ setEn }}" style="{{ enStyle }}">EN</button>
@@ -94,13 +94,13 @@ a:hover{color:#0a4890}
 
   <!-- THE FORK -->
   <div style="max-width:980px;margin:52px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px">
-    <a href="{{ passportHref }}" class="np-card" style="display:flex;flex-direction:column;border:1.5px solid #1a1812;border-radius:14px;background:#fff;padding:36px 32px;text-decoration:none">
+    <a href="{{ passportHref }}" class="np-card" style="display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.5);border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.28));backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:0 8px 32px rgba(13,91,176,.12),inset 0 1px 0 rgba(255,255,255,.6);padding:36px 32px;text-decoration:none">
       <i class="bi bi-passport" style="font-size:34px;color:#0d5bb0;margin-bottom:20px"></i>
       <div style="font-family:'Newsreader',serif;font-size:25px;font-weight:600;color:#1a1812;letter-spacing:-.01em;margin-bottom:12px">{{ t.card1.title }}</div>
       <div style="font-size:15px;line-height:1.6;color:#5b5648;flex:1">{{ t.card1.body }}</div>
       <div style="display:inline-flex;align-items:center;gap:8px;background:#0d5bb0;color:#fff;font-size:14.5px;font-weight:600;padding:13px 22px;margin-top:24px;align-self:flex-start;letter-spacing:.01em">{{ t.card1.cta }}</div>
     </a>
-    <a href="visa-requirements/" class="np-card" style="display:flex;flex-direction:column;border:1.5px solid #1a1812;border-radius:14px;background:#fff;padding:36px 32px;text-decoration:none">
+    <a href="visa-requirements/" class="np-card" style="display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.5);border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.28));backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:0 8px 32px rgba(13,91,176,.12),inset 0 1px 0 rgba(255,255,255,.6);padding:36px 32px;text-decoration:none">
       <i class="bi bi-file-earmark-text" style="font-size:34px;color:#0d5bb0;margin-bottom:20px"></i>
       <div style="font-family:'Newsreader',serif;font-size:25px;font-weight:600;color:#1a1812;letter-spacing:-.01em;margin-bottom:12px">{{ t.card2.title }}</div>
       <div style="font-size:15px;line-height:1.6;color:#5b5648;flex:1">{{ t.card2.body }}</div>
@@ -111,8 +111,8 @@ a:hover{color:#0a4890}
   <!-- FOOTER -->
   <div style="margin:72px auto 0;padding:0 0 90px">
     <footer style="border-top:1px solid rgba(0,0,0,.12);padding-top:22px">
-      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">Gu&iacute;aConsularNicaragua</div>
-      <p style="font-size:12.5px;line-height:1.6;color:#9a9384;margin:0">{{ t.footer.text }}</p>
+      <div style="font-family:'Newsreader',serif;font-weight:600;font-size:16px;color:#1a1812;margin-bottom:8px">Gu&iacute;a Consular Nicaragua</div>
+      <p style="font-size:12.5px;line-height:1.6;color:#4a463d;margin:0">{{ t.footer.text }}</p>
     </footer>
   </div>
 </div>
@@ -191,7 +191,7 @@ class Component extends DCLogic {
         redditLabel: 'Ask the community on r/Nicaragua',
       },
       footer: {
-        text: 'Gu\u00edaConsularNicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and requirements change frequently — always verify with official sources. Last updated July 2026.',
+        text: 'Gu\u00eda Consular Nicaragua is an independent community resource, not affiliated with or endorsed by the Government of Nicaragua. Procedures, fees, and requirements change frequently — always verify with official sources. Last updated July 2026.',
       },
       cookieBanner: { text: 'This site uses cookies to understand how visitors use this guide.', decline: 'Decline', accept: 'Accept' },
       reportLabel: 'Report an issue',
@@ -220,7 +220,7 @@ class Component extends DCLogic {
         redditLabel: 'Pregunta a la comunidad de Reddit en r/Nicaragua',
       },
       footer: {
-        text: 'Gu\u00edaConsularNicaragua es un recurso comunitario independiente, sin afiliaci\u00f3n ni respaldo del Gobierno de Nicaragua. Los procedimientos, tarifas y requisitos cambian con frecuencia — verifica siempre con fuentes oficiales. \u00daltima actualizaci\u00f3n julio 2026.',
+        text: 'Gu\u00eda Consular Nicaragua es un recurso comunitario independiente, sin afiliaci\u00f3n ni respaldo del Gobierno de Nicaragua. Los procedimientos, tarifas y requisitos cambian con frecuencia — verifica siempre con fuentes oficiales. \u00daltima actualizaci\u00f3n julio 2026.',
       },
       cookieBanner: { text: 'Este sitio usa cookies para entender c\u00f3mo los visitantes usan esta gu\u00eda.', decline: 'Rechazar', accept: 'Aceptar' },
       reportLabel: 'Reportar un problema',
@@ -230,7 +230,7 @@ class Component extends DCLogic {
   setEs = () => { if (typeof localStorage !== 'undefined') localStorage.setItem('np_lang', 'es'); this.setState({ lang: 'es' }); };
   setEn = () => { if (typeof localStorage !== 'undefined') localStorage.setItem('np_lang', 'en'); this.setState({ lang: 'en' }); };
   langBtnStyle(active) {
-    return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:2px 2px;color:' + (active ? '#0d5bb0' : '#b3ad9d') +
+    return 'appearance:none;border:none;background:none;cursor:pointer;font-family:Archivo,system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;padding:2px 2px;color:' + (active ? '#0d5bb0' : '#78725f') +
       ';border-bottom:2px solid ' + (active ? '#0d5bb0' : 'transparent') + ';transition:color .15s';
   }
   acceptCookies = () => { localStorage.setItem('np_cookie_consent','accepted'); this.setState({ cookieChoice:'accepted' }); };
